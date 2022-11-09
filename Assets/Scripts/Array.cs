@@ -13,26 +13,34 @@ public class Array : MonoBehaviour
     {
 
     }
-    void onClick(){
-
-    }
 
     // Update is called once per frame
     void Update()
     {
-    	var hit=RaycastHit;
-    	var ray=Camera.main.ScreenPointToRay(input.mousePosition);
-    	for (int i=0;i<cards.length-1;i++){
-    		if(Input.GetMouseButtonDown(0)){
-    			if(Physics.Raycast(ray,hit)){
-    				if(hit.transform.object=cards[i]){
-    					if(cards[i].transform.position.x<1){
-    					while (cards[i].transform.position.x<1){
-    				}
-    				}else if(cards[i].transform.position.x==1){
-    					while (cards[i].transform.position.x>0){
-    				}
-    			}
+    	if(Input.GetMouseButtonDown(0))
+    	{
+    		Ray ray=Camera.main.ScreenPointToRay(input.mousePosition);
+    		RaycastHit hit;
+    		for (int i=0;i<cards.length-1;i++)
+    		{
+    			if(Physics.Raycast(ray,out hit))
+    			{
+    				if(hit.transform.object=cards[i])
+    				{
+    					if(cards[i].transform.position.x<1)
+    					{
+    						while (cards[i].transform.position.x<1)
+    						{
+    							cards[i].transform.position.x+=0.2f;
+    						}
+    					}
+    					else if(cards[i].transform.position.x==1)
+    					{
+    						while (cards[i].transform.position.x>0)
+    						{
+    							cards[i].transform.position.x-=0.2f;
+    						}
+    					}
     				}
     			}
     				
@@ -42,4 +50,5 @@ public class Array : MonoBehaviour
 	}
 
 }
+
 
