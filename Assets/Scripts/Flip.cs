@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Flip : MonoBehaviour
 {
+	public float flipXValue;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,18 +14,13 @@ public class Flip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	OnClick(){
-    		if(flipXValue<1){
-    			flipXValue+=0.2f;
-    		}if else(flipXValue{
-    			flipXValue
-    		}
-    	}	
+    	card1.OnClick();
+	
     }
     void OnClick(){
         if(flipXValue<1){
     			flipXValue+=0.2f;
-    		}if else(flipXValue{
+    		}else if(flipXValue==1){
     			flipXValue-=0.2f;
     		}
  	}

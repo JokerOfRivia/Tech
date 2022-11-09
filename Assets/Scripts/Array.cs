@@ -16,6 +16,7 @@ public class Array : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    	for (int i=0;i<cards.length-1;i++)
 
         
     }
